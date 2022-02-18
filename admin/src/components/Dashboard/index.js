@@ -1,12 +1,12 @@
 /*
  *
- * HomePage
+ * Plausible analytics dashboard.
  *
  */
 
 import React, { memo } from "react";
 
-const HomePage = () => {
+const Dashboard = () => {
   return (
     <div>
       <iframe
@@ -32,4 +32,4 @@ const HomePage = () => {
   );
 };
 
-export default memo(HomePage);
+export default memo(Dashboard);

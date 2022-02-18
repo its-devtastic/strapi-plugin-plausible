@@ -1,13 +1,21 @@
 import { prefixPluginTranslations } from "@strapi/helper-plugin";
 
 import pluginPkg from "../../package.json";
-import pluginId from "./pluginId";
+import pluginId from "./utils/pluginId";
 import PluginIcon from "./components/PluginIcon";
+import pluginPermissions from "./permissions";
 
-const name = pluginPkg.strapi.name;
+const pluginDescription = pluginPkg.strapi.description || pluginPkg.description;
+const { name } = pluginPkg.strapi;
 
 export default {
   register(app) {
+    app.registerPlugin({
+      id: pluginId,
+      isReady: true,
+      description: pluginDescription,
+      name,
+    });
     app.addMenuLink({
       to: `/plugins/${pluginId}`,
       icon: PluginIcon,
@@ -17,19 +25,40 @@ export default {
       },
       Component: async () => {
         const component = await import(
-          /* webpackChunkName: "plausible" */ "./pages/App"
+          /* webpackChunkName: "plausible-dashboard" */ "./pages/App"
         );
 
         return component;
       },
-      permissions: [],
+      permissions: pluginPermissions.view,
     });
-    app.registerPlugin({
-      id: pluginId,
-      // initializer: Initializer,
-      // isReady: false,
-      name,
-    });
+    app.createSettingSection(
+      {
+        id: pluginId,
+        intlLabel: {
+          id: `${pluginId}.plugin.name`,
+          defaultMessage: "Plausible",
+        },
+      },
+      [
+        {
+          intlLabel: {
+            id: `${pluginId}.plugin.name`,
+            defaultMessage: "Settings",
+          },
+          id: `${pluginId}.settings`,
+          to: "/admin/settings/plausible",
+          Component: async () => {
+            const component = await import(
+              /* webpackChunkName: "plausible-settings" */ "./pages/Settings"
+            );
+
+            return component;
+          },
+          permissions: [],
+        },
+      ]
+    );
   },
 
   bootstrap(app) {},

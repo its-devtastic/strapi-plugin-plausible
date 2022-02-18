@@ -9,7 +9,6 @@
     "kind": "plugin"
   },
   "devDependencies": {
-    "@strapi/helper-plugin": "^4.0.8",
     "prettier": "^2.5.1"
   },
   "author": {
@@ -38,5 +37,12 @@
     "analytics",
     "plugin"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@strapi/design-system": "^0.0.1-alpha.76",
+    "@strapi/helper-plugin": "^4.1.0",
+    "@strapi/icons": "^0.0.1-alpha.76",
+    "axios": "^0.26.0",
+    "react": "^17.0.2"
+  }
 }

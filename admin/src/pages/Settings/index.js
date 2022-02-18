@@ -1,7 +1,6 @@
 /**
  *
- * This component is the skeleton around the actual pages, and should only
- * contain code that should be seen on all pages. (e.g. navigation bar)
+ * Settings page.
  *
  */
 
@@ -11,12 +10,12 @@ import pluginPermissions from "../../permissions";
 
 import Dashboard from "../../components/Dashboard";
 
-const App = () => {
+const Settings = () => {
   return (
     <CheckPagePermissions permissions={pluginPermissions.view}>
-      <Dashboard />
+      Settings
     </CheckPagePermissions>
   );
 };
 
-export default App;
+export default Settings;

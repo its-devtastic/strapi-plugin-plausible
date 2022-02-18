@@ -5,17 +5,16 @@
  *
  */
 
-import React from "react";
-import { CheckPagePermissions } from "@strapi/helper-plugin";
-import pluginPermissions from "../../permissions";
+import React, { Suspense, lazy } from "react";
+import { LoadingIndicatorPage } from "@strapi/helper-plugin";
 
-import Dashboard from "../../components/Dashboard";
+const Dashboard = lazy(() => import("../../components/Dashboard"));
 
 const App = () => {
   return (
-    <CheckPagePermissions permissions={pluginPermissions.view}>
+    <Suspense fallback={<LoadingIndicatorPage />}>
       <Dashboard />
-    </CheckPagePermissions>
+    </Suspense>
   );
 };
 

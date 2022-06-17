@@ -29,7 +29,7 @@ export default {
 
     app.registerPlugin({
       id: pluginId,
-      isReady: false,
+      isReady: true,
       description: pluginDescription,
       name,
       initializer: Initializer,

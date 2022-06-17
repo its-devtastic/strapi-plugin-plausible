@@ -27,20 +27,17 @@ const Dashboard = () => {
     setTheme(localStorage.getItem("STRAPI_THEME") || "light");
   }, []);
 
-  return (
-    sharedLink &&
-    theme && (
-      <>
-        <iframe
-          data-plausible-embed=""
-          src={`${sharedLink}&embed=true&theme=${theme}`}
-          loading="lazy"
-          style={{ height: "calc(100vh - 2px)", width: "100%" }}
-        />
-        <script async src="https://plausible.io/js/embed.host.js" />
-      </>
-    )
-  );
+  return sharedLink && theme ? (
+    <>
+      <iframe
+        data-plausible-embed=""
+        src={`${sharedLink}&embed=true&theme=${theme}`}
+        loading="lazy"
+        style={{ height: "calc(100vh - 2px)", width: "100%" }}
+      />
+      <script async src="https://plausible.io/js/embed.host.js" />
+    </>
+  ) : null;
 };
 
 export default memo(Dashboard);

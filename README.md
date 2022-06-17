@@ -70,7 +70,7 @@ For Strapi documentation, please go to [the official Strapi documentation](https
 For questions and issues with this plugin use one of the following channels:
 
 - [GitHub](https://github.com/devtastic-org/strapi-plugin-plausible/issues) (Bug reports, Contributions, Questions and Discussions)
-- [E-mail](mailto:info@devtastic.co) - We'll respond as soon as possible
+- [E-mail](mailto:hi@devtastic.co) - We'll respond as soon as possible
 
 ## 📝 License
 

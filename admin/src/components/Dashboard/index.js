@@ -11,6 +11,7 @@ import pluginId from "../../utils/pluginId";
 
 const Dashboard = () => {
   const [sharedLink, setSharedLink] = useState(null);
+  const [theme, setTheme] = useState(null);
 
   useEffect(() => {
     (async () => {
@@ -22,29 +23,22 @@ const Dashboard = () => {
     })();
   }, []);
 
+  useEffect(() => {
+    setTheme(localStorage.getItem("STRAPI_THEME") || "light");
+  }, []);
+
   return (
-    sharedLink && (
-      <div>
+    sharedLink &&
+    theme && (
+      <>
         <iframe
           data-plausible-embed=""
-          src={sharedLink}
-          scrolling="no"
-          frameBorder="0"
+          src={`${sharedLink}&embed=true&theme=${theme}`}
           loading="lazy"
-          style={{ height: 1600, width: "100%" }}
+          style={{ height: "calc(100vh - 2px)", width: "100%" }}
         />
-        <div style={{ fontSize: 14, paddingBottom: 16 }}>
-          Stats powered by{" "}
-          <a
-            target="_blank"
-            style={{ color: "#4F46E5", textDecoration: "underline" }}
-            href="https://plausible.io"
-          >
-            Plausible Analytics
-          </a>
-        </div>
         <script async src="https://plausible.io/js/embed.host.js" />
-      </div>
+      </>
     )
   );
 };

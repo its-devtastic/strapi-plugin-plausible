@@ -22,8 +22,45 @@ Currently only Strapi v4 is supported.
 
 ## Installation
 
+With `npm`
+```bash
+npm install strapi-plugin-plausible
+```
+
+With `yarn`
 ```bash
 yarn add strapi-plugin-plausible
+```
+
+In the `config/plugins.js` file add:
+
+```js
+plausible: {
+  sharedLink: "<YOUR SHARED LINK>"
+}
+```
+
+You can create a shared link in Plausible by going to _Site settings › Visibility_.
+It looks something like this:
+
+```text
+https://plausible.io/share/example.com?auth=abc123
+```
+
+☝️ Make sure not to enable password protection for this link
+
+☝️ If you're using the `strapi::security` middleware with CSP enabled, make sure
+to allow `plausible.io` as a `frame-src`. Your `config/middlewares.js` should look something like:
+
+```js
+ {
+    name: "strapi::security",
+    config: {
+      contentSecurityPolicy: {
+        useDefaults: true,
+        directives: {
+          "frame-src": ["https://plausible.io"],
+        ...
 ```
 
 ## Support

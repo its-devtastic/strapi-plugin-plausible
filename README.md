@@ -38,7 +38,9 @@ In the `config/plugins.js` file add:
 module.exports = {
   // ...other plugins
   plausible: {
-    sharedLink: "<YOUR SHARED LINK>"
+    config: {
+      sharedLink: "<YOUR SHARED LINK>"
+    }
   }
 }
 ```

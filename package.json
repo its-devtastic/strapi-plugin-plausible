@@ -1,6 +1,6 @@
 {
   "name": "strapi-plugin-plausible",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Add your Plausible analytics dashboard to Strapi.",
   "strapi": {
     "displayName": "Plausible",
@@ -38,10 +38,7 @@
     "plugin"
   ],
   "license": "MIT",
-  "dependencies": {
-    "@strapi/helper-plugin": "^4.2.0",
-    "react": "^17.0.2"
-  },
+  "dependencies": {},
   "peerDependencies": {
     "@strapi/strapi": "^4.2.0"
   }

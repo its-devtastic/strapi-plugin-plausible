@@ -35,8 +35,11 @@ yarn add strapi-plugin-plausible
 In the `config/plugins.js` file add:
 
 ```js
-plausible: {
-  sharedLink: "<YOUR SHARED LINK>"
+module.exports = {
+  // ...other plugins
+  plausible: {
+    sharedLink: "<YOUR SHARED LINK>"
+  }
 }
 ```
 

@@ -35,14 +35,14 @@ yarn add strapi-plugin-plausible
 In the `config/plugins.js` file add:
 
 ```js
-module.exports = {
+module.exports = ({ env }) => ({
   // ...other plugins
   plausible: {
     config: {
-      sharedLink: "<YOUR SHARED LINK>"
+      sharedLink: env("PLAUSIBLE_SHARED_LINK")
     }
   }
-}
+})
 ```
 
 You can create a shared link in Plausible by going to _Site settings › Visibility_.
@@ -81,4 +81,4 @@ For questions and issues with this plugin use one of the following channels:
 
 [MIT License](LICENSE.md) 
 
-Made with 💛 in Utrecht by [Devtastic](https://devtastic.co/).
+Made in Utrecht by [Devtastic](https://devtastic.build/) 👨‍💻🌱🇪🇺.

@@ -1,6 +1,6 @@
 {
   "name": "strapi-plugin-plausible",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Add your Plausible analytics dashboard to Strapi.",
   "strapi": {
     "displayName": "Plausible",
@@ -9,17 +9,18 @@
     "kind": "plugin"
   },
   "devDependencies": {
-    "prettier": "^2.8.7"
+    "@strapi/strapi": "^4.0.0",
+    "prettier": "^3.2.5"
   },
   "author": {
     "name": "Devtastic",
-    "email": "hi@devtastic.build",
-    "url": "https://devtastic.build"
+    "email": "hi@devtastic.io",
+    "url": "https://devtastic.io"
   },
   "maintainers": [
     {
       "name": "Leon van der Grient",
-      "email": "leon@devtastic.build",
+      "email": "leon@devtastic.io",
       "url": "https://github.com/StructuralRealist"
     }
   ],
@@ -28,7 +29,7 @@
     "type": "git"
   },
   "engines": {
-    "node": ">=14.19.1 <=18.x.x",
+    "node": ">=18.0.0 <=20.x.x",
     "npm": ">=6.0.0"
   },
   "keywords": [
@@ -39,6 +40,6 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@strapi/strapi": "^4.9.0"
+    "@strapi/strapi": "^4.0.0"
   }
 }

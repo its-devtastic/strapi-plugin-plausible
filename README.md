@@ -82,4 +82,4 @@ For questions and issues with this plugin use one of the following channels:
 
 [MIT License](LICENSE.md) 
 
-Made in Utrecht by [Devtastic](https://devtastic.build/) 👨‍💻🌱🇪🇺.
+Made in Utrecht by [Devtastic](https://devtastic.io/) 👨‍💻🌱🇪🇺.

@@ -18,7 +18,8 @@ A plugin for [Strapi](https://github.com/strapi/strapi) that embeds [Plausible](
 
 ## Supported Strapi version
 
-Currently only Strapi v4 is supported.
+> [!WARNING]  
+> Only Strapi v4 is supported. Use [this plugin](https://github.com/douwepausma/strapi-plausible) for Strapi v5 (thanks to [@douwepausma](https://github.com/douwepausma)).
 
 ## Installation
 
